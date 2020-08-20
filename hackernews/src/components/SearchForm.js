@@ -1,15 +1,19 @@
 import React, { Component } from "react";
 
+//Redux
+import { connect } from "react-redux";
+import { searchNews } from "../actions/searchActions";
+
 class SearchForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      query: "",
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     query: "",
+  //   };
+  // }
 
   handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
+    this.props.searchNews(e.target.value);
   };
 
   handleSubmit = (e) => {
@@ -29,7 +33,6 @@ class SearchForm extends Component {
               type="text"
               name="query"
               onChange={this.handleChange}
-              value={this.state.query}
             ></input>
           </div>
           <br />
@@ -40,4 +43,8 @@ class SearchForm extends Component {
   }
 }
 
-export default SearchForm;
+const mapStateToProps = (state) => ({
+  text: state.news.text,
+});
+
+export default connect(mapStateToProps, { searchNews })(SearchForm);

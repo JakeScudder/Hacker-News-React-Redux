@@ -1,10 +1,14 @@
 import React, { Component } from "react";
+import { Provider } from "react-redux";
 import logo from "./hackerLogo.png";
 import "./App.css";
 
 //components
 import SearchResults from "./components/SearchResults";
 import SearchForm from "./components/SearchForm";
+
+//Redux
+import store from "./store";
 
 class App extends Component {
   constructor(props) {
@@ -34,16 +38,18 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1>Hacker News</h1>
-        </header>
-        <div id="form-results-container">
-          <SearchForm handleSearch={this.fetchResults} />
-          <SearchResults data={this.state.results} />
+      <Provider store={store}>
+        <div className="App">
+          <header className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <h1>Hacker News</h1>
+          </header>
+          <div id="form-results-container">
+            <SearchForm handleSearch={this.fetchResults} />
+            <SearchResults data={this.state.results} />
+          </div>
         </div>
-      </div>
+      </Provider>
     );
   }
 }
