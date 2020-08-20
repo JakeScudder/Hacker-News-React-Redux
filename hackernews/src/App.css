@@ -4,7 +4,7 @@
 
 .App-logo {
   margin-top: 5vmin;
-  height: 20vmin;
+  height: 12vmin;
   pointer-events: none;
 }
 
@@ -34,6 +34,29 @@
   margin: auto;
 }
 
+h2 {
+  margin-bottom: 0.5em;
+}
+
+#results-title {
+  margin-bottom: 5px;
+}
+
+hr {
+  height: 3px;
+  background-color: #3286b7;
+  border: 1px solid #3286b7;
+}
+
+.specific-result-title {
+  margin-bottom: 4px;
+}
+
+.author {
+  font-weight: 700;
+  margin-top: 0px;
+}
+
 #search-bar-container {
   margin: auto;
   text-align: center;
@@ -41,23 +64,26 @@
 
 #form-input {
   width: 40%;
-  font-size: 16px;
+  font-size: 22px;
+  padding: 2px;
   margin-top: 20px;
+  border: 2px solid #3286b7;
+  border-radius: 4px;
 }
 
 button {
   width: 75px;
   height: 30px;
+  border: 2px solid #3286b7;
   border-radius: 5px;
   box-shadow: -1px -1px;
   font-size: 16px;
+  font-weight: 550;
+  color: white;
+  background-color: #ff8736;
 }
-
-/* #results-container {
-  
-} */
 
 a {
   text-decoration: none;
-  color: green;
+  color: #198a19;
 }

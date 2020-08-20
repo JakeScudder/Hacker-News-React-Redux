@@ -18,13 +18,15 @@ class App extends Component {
     };
   }
 
+  //When component mounts, API is fetched.
   componentDidMount() {
     this.fetchResults();
   }
 
   //API fetch function
   fetchResults = (query) => {
-    console.log(this.props);
+    //Declare searchQuery variable, if user has not entered any search terms
+    //Bitcoin is generic first search, otherwise it will set searchQuery to the user's input
     let searchQuery;
     if (!query) {
       searchQuery = "bitcoin";
@@ -32,7 +34,7 @@ class App extends Component {
       searchQuery = query;
     }
 
-    fetch(`http://hn.algolia.com/api/v1/search?query=${searchQuery}`)
+    fetch(`https://hn.algolia.com/api/v1/search?query=${searchQuery}`)
       .then((res) => res.json())
       .then((data) => this.setState({ results: data.hits }));
   };
@@ -43,7 +45,7 @@ class App extends Component {
         <div className="App">
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
-            <h1>Hacker News</h1>
+            <h2>Hacker News</h2>
           </header>
           <div id="form-results-container">
             <SearchForm handleSearch={this.fetchResults} />

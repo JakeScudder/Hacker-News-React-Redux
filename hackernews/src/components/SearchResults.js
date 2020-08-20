@@ -1,25 +1,25 @@
 import React, { Component } from "react";
 
 class SearchResults extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      query: "",
-    };
-  }
+  //Function that capitalizes the author name
+  capitalizeWord = (name) => {
+    return name[0].toUpperCase() + name.substr(1);
+  };
 
   render() {
+    console.log(this.props.data);
     const resultItems = this.props.data.map((result) => (
       <div key={result.objectID}>
-        <h3>
+        <h3 className="specific-result-title">
           <a href={result.url}>{result.title}</a>
         </h3>
-        <p>Author: {result.author}</p>
+        <p className="author">Author: {this.capitalizeWord(result.author)}</p>
       </div>
     ));
     return (
       <div id="results-container">
-        <h3>Results</h3>
+        <h3 id="results-title">Results</h3>
+        <hr />
         {resultItems}
       </div>
     );
