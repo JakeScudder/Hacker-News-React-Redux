@@ -24,6 +24,7 @@ class App extends Component {
 
   //API fetch function
   fetchResults = (query) => {
+    console.log(this.props);
     let searchQuery;
     if (!query) {
       searchQuery = "bitcoin";

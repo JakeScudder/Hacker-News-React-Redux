@@ -19,7 +19,7 @@ class SearchResults extends Component {
     ));
     return (
       <div id="results-container">
-        <h1>Results</h1>
+        <h3>Results</h3>
         {resultItems}
       </div>
     );
