@@ -15,6 +15,8 @@ class SearchForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.handleSearch(this.props.text);
+    //clears input after submission
+    e.target.firstElementChild.firstChild.value = "";
   };
 
   render() {
