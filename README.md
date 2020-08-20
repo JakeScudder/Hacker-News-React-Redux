@@ -2,7 +2,7 @@
 
 ## Hacker News API - React-Redux
 
-<img margin-left="auto" margin-right="auto" src="/hackernews/src/hackerLogo.png" height="200" width="200">
+<img margin-left="auto" margin-right="auto" src="/hackernews/src/hackerLogo.png" height="150" width="150">
 </img>
 
 </div>
