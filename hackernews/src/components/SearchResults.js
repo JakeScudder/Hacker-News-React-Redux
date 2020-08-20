@@ -7,7 +7,6 @@ class SearchResults extends Component {
   };
 
   render() {
-    console.log(this.props.data);
     const resultItems = this.props.data.map((result) => (
       <div key={result.objectID}>
         <h3 className="specific-result-title">

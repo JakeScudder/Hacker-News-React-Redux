@@ -38,7 +38,7 @@ class SearchForm extends Component {
   }
 }
 
-//After leaving the searchReducer i need to use MapStateToProps to access the search text in the component
+//After leaving the searchReducer I need to use MapStateToProps to access the search text in the component
 //news variable is used because in the root reducer, that was the variable I chose
 //text variable is used to retrieve payload from searchReducer
 //now a this.props.text variable is available
