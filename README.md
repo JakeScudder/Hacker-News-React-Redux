@@ -1,7 +1,10 @@
 <div align="center">
-<img margin-left="auto" margin-right="auto" src="/hackernews/src/hackerLogo.png" height="125" width="125">
+
+<img margin-left="auto" margin-right="auto" src="/hackernews/src/hackerLogo.png" height="150" width="150">
 </img>
-## Hacker News API // React and Redux
+
+## Hacker News API // React-Redux
+
 </div>
 
 ### Description
