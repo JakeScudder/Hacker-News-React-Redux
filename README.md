@@ -21,7 +21,7 @@ https://jakescudder.github.io/RTS-Labs-React-Redux/
 
 ### How To Use
 
-After cloning this respository you can:
+After cloning this respository you can use these commands to start the project:
 
 ```
 cd hackernews
