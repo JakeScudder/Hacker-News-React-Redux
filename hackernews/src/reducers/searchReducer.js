@@ -1,7 +1,8 @@
-import { SEARCH_NEWS } from "../actions/types";
+import { SEARCH_NEWS, SAVE_SEARCH } from "../actions/types";
 
 const initialState = {
   text: "",
+  searchTerms: [],
 };
 
 export default function (state = initialState, action) {
@@ -12,6 +13,11 @@ export default function (state = initialState, action) {
       return {
         ...state,
         text: action.payload,
+      };
+    case SAVE_SEARCH:
+      return {
+        ...state,
+        searchTerms: [...state.searchTerms, action.payload],
       };
     default:
       return state;
