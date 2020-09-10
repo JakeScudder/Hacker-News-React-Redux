@@ -1,4 +1,4 @@
-import { SEARCH_NEWS, SAVE_SEARCH } from "../actions/types";
+import { SEARCH_NEWS, SAVE_SEARCH, DELETE_SEARCH } from "../actions/types";
 
 const initialState = {
   text: "",
@@ -19,6 +19,17 @@ export default function (state = initialState, action) {
         ...state,
         searchTerms: [...state.searchTerms, action.payload],
       };
+
+    case DELETE_SEARCH:
+      console.log("deleting");
+      console.log(action.payload);
+      return {
+        ...state,
+        searchTerms: state.searchTerms.filter(
+          (item) => item !== action.payload
+        ),
+      };
+
     default:
       return state;
   }

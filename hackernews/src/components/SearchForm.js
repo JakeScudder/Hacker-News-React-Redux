@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import Nav from "./Nav.js";
+
 //Redux
 import { connect } from "react-redux";
 import { searchNews, saveSearch } from "../actions/searchActions";
@@ -37,8 +39,11 @@ class SearchForm extends Component {
             ></input>
           </div>
           <br />
-          <button type="submit">Search</button>
+          <button className="search-button" type="submit">
+            Search
+          </button>
         </form>
+        <Nav data={this.props.searchTerms} />
       </div>
     );
   }
