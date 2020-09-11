@@ -26,13 +26,7 @@ class Nav extends Component {
           onClick={this.handleClick}
         >
           {term}
-          <div
-            style={{
-              display: "inline-block",
-              verticalAlign: "middle",
-              marginTop: "5px",
-            }}
-          >
+          <div className="centering-div">
             <IoIosClose
               size={30}
               style={{ marginLeft: "5px" }}

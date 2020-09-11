@@ -88,6 +88,18 @@ hr {
   margin-right: 15px;
 }
 
+.recent-search-li:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.centering-div {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -10px;
+  height: 20px;
+}
+
 .search-term-button {
   width: 100%;
   font-size: 22px;
@@ -96,6 +108,11 @@ hr {
   border: 3px solid #3286b7;
   border-radius: 10px;
   box-shadow: 1px 1px;
+}
+
+.search-term-button:focus {
+  outline: none;
+  box-shadow: none;
 }
 
 .react-icons {
