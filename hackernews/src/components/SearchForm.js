@@ -25,6 +25,10 @@ class SearchForm extends Component {
     e.target.firstElementChild.firstChild.value = "";
   };
 
+  handleNavSearch = (searchTerm) => {
+    this.props.handleSearch(searchTerm);
+  };
+
   render() {
     return (
       <div id="search-bar-container">
@@ -43,7 +47,7 @@ class SearchForm extends Component {
             Search
           </button>
         </form>
-        <Nav data={this.props.searchTerms} />
+        <Nav handleNav={this.handleNavSearch} data={this.props.searchTerms} />
       </div>
     );
   }

@@ -6,8 +6,9 @@ import { deleteSearch } from "../actions/searchActions";
 import { IoIosClose } from "react-icons/io";
 
 class Nav extends Component {
-  handleClick = () => {
-    console.log("clicked");
+  handleClick = (e) => {
+    let searchTerm = e.target.textContent;
+    this.props.handleNav(searchTerm);
   };
 
   handleClose = (e) => {
@@ -43,7 +44,12 @@ class Nav extends Component {
     ));
     return (
       <div>
-        <ul>{searchTerms}</ul>
+        <ul>
+          {searchTerms.length > 0 ? (
+            <li className="recent-search-title">Recent Searches:</li>
+          ) : null}
+          {searchTerms}
+        </ul>
       </div>
     );
   }
