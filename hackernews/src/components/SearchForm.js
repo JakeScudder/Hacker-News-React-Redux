@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 
+import Nav from "./Nav.js";
+
 //Redux
 import { connect } from "react-redux";
-import { searchNews } from "../actions/searchActions";
+import { searchNews, saveSearch } from "../actions/searchActions";
 
 class SearchForm extends Component {
   //Function handles the onChange event and sends the target value to the searchNews function in the actions folder
@@ -11,12 +13,20 @@ class SearchForm extends Component {
   };
 
   //Function handles the submit event
-  //Sends this.props.text(From Redux State) through the handleSearch prop to the App.js file
   handleSubmit = (e) => {
     e.preventDefault();
+    //Sends this.props.text(From Redux State) through the handleSearch prop to the App.js file
     this.props.handleSearch(this.props.text);
-    //clears input after submission
+
+    // //Saves search term to Redux state array
+    this.props.saveSearch(this.props.text);
+
+    //Clears input after submission
     e.target.firstElementChild.firstChild.value = "";
+  };
+
+  handleNavSearch = (searchTerm) => {
+    this.props.handleSearch(searchTerm);
   };
 
   render() {
@@ -33,8 +43,11 @@ class SearchForm extends Component {
             ></input>
           </div>
           <br />
-          <button type="submit">Search</button>
+          <button className="search-button" type="submit">
+            Search
+          </button>
         </form>
+        <Nav handleNav={this.handleNavSearch} data={this.props.searchTerms} />
       </div>
     );
   }
@@ -46,6 +59,7 @@ class SearchForm extends Component {
 //now a this.props.text variable is available
 const mapStateToProps = (state) => ({
   text: state.news.text,
+  searchTerms: state.news.searchTerms,
 });
 
-export default connect(mapStateToProps, { searchNews })(SearchForm);
+export default connect(mapStateToProps, { searchNews, saveSearch })(SearchForm);
