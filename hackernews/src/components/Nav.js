@@ -6,18 +6,22 @@ import { deleteSearch } from "../actions/searchActions";
 import { IoIosClose } from "react-icons/io";
 
 class Nav extends Component {
+  //Function that sends the text value of the nav button to searchForm.js
   handleClick = (e) => {
     let searchTerm = e.target.textContent;
     this.props.handleNav(searchTerm);
   };
 
+  //Function that calls the deleteSearch action
   handleClose = (e) => {
+    //stops button click from re-rendering results
+    e.stopPropagation();
     let term = e.target.parentElement.parentElement.parentElement.textContent;
     this.props.deleteSearch(term);
   };
 
   render() {
-    console.log(this.props.data);
+    console.log("searchTerms array:", this.props.data);
     const searchTerms = this.props.data.map((term, index) => (
       <li className="recent-search-li" key={index}>
         <button

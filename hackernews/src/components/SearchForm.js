@@ -25,6 +25,7 @@ class SearchForm extends Component {
     e.target.firstElementChild.firstChild.value = "";
   };
 
+  //Passes along the navTerm to the api fetch in App.js
   handleNavSearch = (searchTerm) => {
     this.props.handleSearch(searchTerm);
   };

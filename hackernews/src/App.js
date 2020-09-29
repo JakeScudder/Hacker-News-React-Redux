@@ -23,20 +23,19 @@ class App extends Component {
     this.fetchResults();
   }
 
-  //API fetch function
+  //API fetch function (For Front Page News Display)
   fetchResults = (query) => {
     //Declare searchQuery variable, if user has not entered any search terms
-    //Bitcoin is generic first search, otherwise it will set searchQuery to the user's input
-    let searchQuery;
+    //If no query is provided, webpage will load up the front page news, otherwise search api will be fetched with query
     if (!query) {
-      searchQuery = "bitcoin";
+      fetch(`http://hn.algolia.com/api/v1/search?tags=front_page`)
+        .then((res) => res.json())
+        .then((data) => this.setState({ results: data.hits }));
     } else {
-      searchQuery = query;
+      fetch(`https://hn.algolia.com/api/v1/search?query=${query}`)
+        .then((res) => res.json())
+        .then((data) => this.setState({ results: data.hits }));
     }
-
-    fetch(`https://hn.algolia.com/api/v1/search?query=${searchQuery}`)
-      .then((res) => res.json())
-      .then((data) => this.setState({ results: data.hits }));
   };
 
   render() {
@@ -58,3 +57,19 @@ class App extends Component {
 }
 
 export default App;
+
+//API fetch function (First Iteration)
+// fetchResults = (query) => {
+//   //Declare searchQuery variable, if user has not entered any search terms
+//   //Bitcoin is generic first search, otherwise it will set searchQuery to the user's input
+//   let searchQuery;
+//   if (!query) {
+//     searchQuery = "bitcoin";
+//   } else {
+//     searchQuery = query;
+//   }
+
+//   fetch(`https://hn.algolia.com/api/v1/search?query=${searchQuery}`)
+//     .then((res) => res.json())
+//     .then((data) => this.setState({ results: data.hits }));
+// };

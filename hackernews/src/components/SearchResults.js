@@ -7,6 +7,7 @@ class SearchResults extends Component {
   };
 
   render() {
+    //Results are passed down from the App.js file, made available in this.props.data
     const resultItems = this.props.data.map((result) => (
       <div key={result.objectID}>
         <h3 className="specific-result-title">
