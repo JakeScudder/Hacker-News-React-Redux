@@ -17,7 +17,7 @@ React, Redux
 
 ### Check it out
 
-https://jakescudder.github.io/RTS-Labs-React-Redux/
+https://jakescudder.github.io/Hacker-News-React-Redux/
 
 ### How To Use
 
