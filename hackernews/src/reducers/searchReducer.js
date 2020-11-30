@@ -15,6 +15,7 @@ export default function (state = initialState, action) {
         text: action.payload,
       };
     case SAVE_SEARCH:
+      console.log("Saved the search");
       return {
         ...state,
         searchTerms: [...state.searchTerms, action.payload],

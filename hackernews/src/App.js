@@ -1,14 +1,14 @@
 import React, { Component } from "react";
-import { Provider } from "react-redux";
-import logo from "./hackerLogo.png";
-import "./App.css";
-
 //components
 import SearchResults from "./components/SearchResults";
 import SearchForm from "./components/SearchForm";
 
 //Redux
+import { Provider } from "react-redux";
 import store from "./store";
+
+import logo from "./hackerLogo.png";
+import "./App.css";
 
 class App extends Component {
   constructor(props) {
