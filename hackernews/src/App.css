@@ -51,7 +51,7 @@ hr {
 }
 
 .specific-result-title {
-  margin-bottom: 4px;
+  margin-bottom: 1rem;
 }
 
 .author {
@@ -154,7 +154,8 @@ hr {
 
 a {
   text-decoration: none;
-  color: #198a19;
+  color: black;
+  border-bottom: 3px solid #687168;
 }
 
 /* Comments */
@@ -173,12 +174,12 @@ a {
 .get-comments {
   height: 25px;
   border: 2px solid rgba(0, 0, 0, 0.673);
-  border-radius: 3px;
-  box-shadow: 2px 2px 3px;
+  border-radius: 1px;
+  box-shadow: 2px 2px 1px;
   font-size: 16px;
   padding: 3px;
   color: black;
-  background-color: #3286b7;
+  background-color: rgb(70 68 68 / 70%);;
 }
 
 @media screen and (min-width: 1500px) {
