@@ -33,6 +33,8 @@ const Comments = (props) => {
     
   }
 
+  // Testing 
+  
   return (
     <div id="comment-container">
     <h3 id="comment-header">Comments</h3>
@@ -48,10 +50,3 @@ const Comments = (props) => {
 }
 
 export default Comments;
-
-// comments.hits.map((comment) => (
-//   <div key={uuidv4()}>
-//       <h5>{comment.comment_text}</h5>
-//        <h5>{comment.created_at.substr(0, 10)}</h5>
-//      </div>
-// ))

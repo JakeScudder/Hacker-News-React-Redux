@@ -5,6 +5,7 @@ const initialState = {
   searchTerms: [],
 };
 
+// eslint-disable-next-line 
 export default function (state = initialState, action) {
   switch (action.type) {
     //After leaving the root reducer, I want to have the text available inside the SearchForm this.props.text property;
