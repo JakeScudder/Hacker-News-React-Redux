@@ -33,7 +33,6 @@ class Nav extends Component {
           <div className="centering-div">
             <IoIosClose
               size={30}
-              style={{ marginLeft: "5px" }}
               onClick={this.handleClose}
             />
           </div>
@@ -41,7 +40,7 @@ class Nav extends Component {
       </li>
     ));
     return (
-      <div>
+      <div id="recent-search-term-div">
         <ul>
           {searchTerms.length > 0 ? (
             <li className="recent-search-title">Recent Searches:</li>
